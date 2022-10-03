@@ -1,0 +1,29 @@
+#Sorting Solution
+class Solution:
+    def firstMissingPositive(self, nums: List[int]) -> int:
+        nums.sort()
+        cur = 0
+        for idx, val in enumerate(nums):
+            if val <= 0:
+                continue
+            elif val == cur or val == cur + 1:
+                cur = val
+            else:
+                break
+
+        return cur + 1
+        
+        
+        
+#Hashtable Solution
+class Solution:
+    def firstMissingPositive(self, nums: List[int]) -> int:
+        present_values = set()
+        for v in nums:
+            if v > 0:
+                present_values.add(v)
+        cur = 1
+        while cur in present_values:
+            cur += 1
+
+        return cur
