@@ -3,3 +3,12 @@ class Solution:
         return True if len(nums)>len(set(nums)) else False
     
 #set() method is used to convert any of the iterable to sequence of iterable elements with distinct elements, commonly called Set.
+
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        if (len(nums) > len(set(nums))):
+            return True
+        else:
+            False
+            
+        
